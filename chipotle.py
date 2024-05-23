@@ -84,9 +84,9 @@ print(chipo.columns)
 
 # Step 13. Turn the item price into a float
 # removing the dollar sign and converting the rest to a float $2.39 -> 2.39
-dollarizer = lambda x: float(x[1:])
+# dollarizer = lambda x: float(x[1:])
 # applying the function to each item
-chipo.item_price = chipo.item_price.apply(dollarizer)
+# chipo.item_price = chipo.item_price.apply(dollarizer)
 
 # ------------------------------------------------------------------------------------------------
 
@@ -121,5 +121,46 @@ chipo.item_price = chipo.item_price.apply(dollarizer)
 # ------------------------------------------------------------------------------------------------
 
 # Step 18. How many times were a Veggie Salad Bowl ordered?
-veggie_salad_bowl = chipo.groupby('item_name')['quantity'].sum()
-print(veggie_salad_bowl['Veggie Salad Bowl'])
+# veggie_salad_bowl = chipo.groupby('item_name')['quantity'].sum()
+# print(veggie_salad_bowl['Veggie Salad Bowl'])
+# or
+# veggie_salad_bowl = chipo[chipo.item_name == 'Veggie Salad Bowl']
+# print(len(veggie_salad_bowl))
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 19. How many products cost more than $10.00?
+# chipo['item_price'] = chipo['item_price'].str.replace('$', '') .astype(float)
+# product_cost_more_than_10 = chipo[chipo['item_price'] > 10]['item_name'].nunique()
+# print(product_cost_more_than_10)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 20. What is the price of each item?
+# print(chipo[['item_name', 'item_price']].drop_duplicates().to_string(index=False))
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 21. Sort by the name of the item
+# sorted_by_name = chipo.item_name.sort_values()
+# print(sorted_by_name)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 22. What was the quantity of the most expensive item ordered?
+# chipo['item_price'] = chipo['item_price'].str.replace('$', '') .astype(float)
+# sorted_items = chipo.sort_values(by='item_price', ascending=False).head(1)
+# print(sorted_items)
+# print(f"Most expensive item is: {sorted_items['item_name'].to_string(index=False)} ->\n"
+#       f"price: {sorted_items['item_price'].to_string(index=False)}\n"
+#       f"quantity: {sorted_items['quantity'].to_string(index=False)}")
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 23. How many times did someone order more than one Canned Soda?
+canned_soda = chipo[chipo.item_name == 'Canned Soda']
+canned_soda_more_than_one = len(canned_soda[canned_soda.quantity > 1])
+print(canned_soda_more_than_one)
+# or
+# canned_soda_more_than_one = chipo[(chipo.item_name == 'Canned Soda') & (chipo.quantity > 1)]
+# print(len(canned_soda_more_than_one))
