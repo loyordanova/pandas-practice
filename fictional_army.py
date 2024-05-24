@@ -100,4 +100,4 @@ selected_columns = army.loc[['Maine', 'Alaska'], ['deaths', 'deserters']]
 
 # Step 18. Select the third cell down in the column named death
 
-print(army.loc[:, ['deaths']].iloc[2])
+# print(army.loc[:, ['deaths']].iloc[2])
