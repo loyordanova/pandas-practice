@@ -89,4 +89,40 @@ users = pd.read_csv(url, sep='|', index_col='user_id')
 # ------------------------------------------------------------------------------------------------
 
 # Step 18. What is the age with least occurrence?
-print(users.age.value_counts().tail(1).index[0])
+# print(users.age.value_counts().tail(1).index[0])
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 19. Discover what is the mean age per occupation?
+# mean_age_per_occupation = users.groupby('occupation')['age'].mean()
+# print(mean_age_per_occupation)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 20. Discover the Male ratio per occupation and sort it from the most to the least
+# users['users_n'] = users['gender'].map({'M': 1, 'F': 0})
+# male_percentage = users.groupby('occupation')['users_n'].mean() * 100
+# sorted_male_percentage = male_percentage.sort_values(ascending=False)
+# print(sorted_male_percentage)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 21. For each occupation, calculate the minimum and maximum ages
+# print(users.groupby('occupation')['age'].agg(['min', 'max']))
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 22. For each combination of occupation and gender, calculate the mean age
+# mean_age = users.groupby(['occupation', 'gender'])['age'].mean()
+# print(mean_age)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 23. For each occupation present the percentage of women and men
+# agg functions can be dictionaries where the keys are the names of the columns and values are the agg
+# functions to apply
+# men_women_count = users.groupby(['occupation', 'gender']).agg({'gender': 'count'})
+# occup_count = users.groupby(['occupation']).agg('count')
+# men_women_percentage = men_women_count.div(occup_count, level='occupation') * 100
+# print(men_women_percentage.loc[:, 'gender'])
+
