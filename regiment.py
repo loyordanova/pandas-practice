@@ -20,8 +20,30 @@ regiment = pd.DataFrame(raw_data, columns = raw_data.keys())
 
 # Step 4. What is the mean preTestScore from the regiment Nighthawks?
 mean_preTestScore = regiment[regiment['regiment'] == 'Nighthawks']['preTestScore'].mean()
-print(mean_preTestScore)
+# print(mean_preTestScore)
 
 # ------------------------------------------------------------------------------------------------
 
-# Step 5. Present general statistics by company
+# Step 5. What is the mean preTestScore from the regiment Nighthawks?
+# mean_preTestScore_nighthawks = regiment[regiment['regiment'] == 'Nighthawks']['preTestScore'].mean()
+# print(mean_preTestScore_nighthawks)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 6. Present general statistics by company
+# general_statistics = regiment.groupby('company').describe()
+# print(general_statistics)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 7. What is the mean of each company's preTestScore?'
+# mean_preTestScore_per_company = regiment.groupby('company')['preTestScore'].mean()
+# print(mean_preTestScore_per_company)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 8. Present the mean preTestScores grouped by regiment and company
+# groupedByPreTestScore = regiment.groupby(['regiment', 'company'])['preTestScore'].mean()
+# print(groupedByPreTestScore)
+
+# ------------------------------------------------------------------------------------------------
