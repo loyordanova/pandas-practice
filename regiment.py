@@ -47,3 +47,26 @@ mean_preTestScore = regiment[regiment['regiment'] == 'Nighthawks']['preTestScore
 # print(groupedByPreTestScore)
 
 # ------------------------------------------------------------------------------------------------
+
+# Step 9. Present the mean preTestScores grouped by regiment and company without heirarchical indexing
+# groupedByPreTestScore = regiment.groupby(['regiment', 'company'])['preTestScore'].mean().unstack()
+# print(groupedByPreTestScore)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 10. What is the number of observations in each regiment and company
+# number_of_observations = regiment.groupby(['regiment','company']).size()
+# print(number_of_observations)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 11. Iterate over a group and print the name and the whole data from the regiment
+for name, group in regiment.groupby('regiment'):
+        print(name)
+        print(group)
+
+
+
+
+
+
