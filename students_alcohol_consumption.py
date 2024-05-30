@@ -30,7 +30,18 @@ capitalizer = lambda x: x.capitalize()
 # ------------------------------------------------------------------------------------------------
 
 # Step 6. Capitalize both Mjob and Fjob
-cap_mjoc = df['Mjob'].apply(capitalizer)
-cap_fjob = df['Fjob'].apply(capitalizer)
-print(cap_mjoc)
-print(cap_fjob)
+# cap_mjoc = df['Mjob'].apply(capitalizer)
+# cap_fjob = df['Fjob'].apply(capitalizer)
+# print(cap_mjoc)
+# print(cap_fjob)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 7. Print the last elements of the data set.
+# print(df.tail())
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 8. Did you notice the original dataframe is still lowercase? Why is that? Fix it and capitalize Mjob and Fjob.
+# df['Mjob'] = df['Mjob'].apply(capitalizer)
+# df['Fjob'] = df['Fjob'].apply(capitalizer)
