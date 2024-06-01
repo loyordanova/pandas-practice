@@ -45,3 +45,9 @@ capitalizer = lambda x: x.capitalize()
 # Step 8. Did you notice the original dataframe is still lowercase? Why is that? Fix it and capitalize Mjob and Fjob.
 # df['Mjob'] = df['Mjob'].apply(capitalizer)
 # df['Fjob'] = df['Fjob'].apply(capitalizer)
+
+# ------------------------------------------------------------------------------------------------
+
+# Step 9. Create a function called majority that returns a boolean value to a new column called legal_drinker (Consider majority as older than 17 years old)
+
+
